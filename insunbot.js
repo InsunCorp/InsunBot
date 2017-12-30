@@ -23,14 +23,21 @@ client.on("message", (message) => {
     const command = args.shift().toLowerCase();
 
     if (!command.match(/[a-z\-]+/g))
+    {
+        console.log(`Command ${command} was failed RegEx evaluation.`);
         return;
+    }
 
     try
     {
-        let commandFile = require(`./commands/${command}.js`);
-        if (!fs.existsSync(commandFile))
+        let commandFileName = `./commands/${command}.js`;
+        if (!fs.existsSync(commandFileName))
+        {
+            console.log(`Could not find command file ${commandFileName}.`);
             return;
+        }
 
+        let commandFile = require(commandFileName);
         commandFile.run(client, message, args);
     }
     catch (err)
