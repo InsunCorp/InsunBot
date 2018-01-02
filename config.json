@@ -1,5 +1,6 @@
 {
   "token": "Mzk2NTAzNTAwOTY5ODY5MzE1.DSigGQ.K1IshcmenziLfHdLRzkQ9ibm7xY",
   "prefix": "!",
-  "execRoles": ["Board", "Personnel", "Executive"]
+  "execRoles": ["Board", "Personnel", "Executive"],
+  "personnelRoles": ["Board", "Personnel"]
 }
